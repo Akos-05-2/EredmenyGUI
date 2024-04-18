@@ -24,8 +24,30 @@ namespace EredmenyGUI
 
         private void EredmenyForm_Load(object sender, EventArgs e)
         {
-            EredmenyRepositroy.Path = "eredmeny.txt";
+            EredmenyRepositroy.Path = "eredmenyek.txt";
             dataGridView1.DataSource = EredmenyRepositroy.FindAll();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Eredmények 1.0\n© Olajkár Ákos ");
+        }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (openFileDialogEredmeny.ShowDialog() == DialogResult.OK)
+            {
+                EredmenyRepositroy.Path = openFileDialogEredmeny.FileName;
+                dataGridView1.DataSource = EredmenyRepositroy.FindAll();
+            }
+            {
+
+            }
         }
     }
 }

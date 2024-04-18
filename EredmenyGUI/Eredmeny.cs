@@ -20,25 +20,25 @@ namespace EredmenyGUI
             {
                 if (Percent < 25)
                 {
-                    Mark = 1;
+                    return 1;
                 }
                 else if (Percent >= 25 && Percent <= 39)
                 {
-                    Mark = 2;
+                    return 2;
                 }
                 else if (Percent >= 40 && Percent <= 59)
                 {
-                    Mark = 3;
+                    return 3;
                 }
                 else if (Percent >= 60 && Percent <= 79)
                 {
-                    Mark = 4;
+                    return 4;
                 }
-                else if (Percent >= 80 && Percent <= 100)
+                else
                 {
-                    Mark = 5;
+                    return 5;
                 }
-                return Mark;
+                
             }
             set { }
         }
